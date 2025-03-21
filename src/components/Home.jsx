@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-
+import Register from "./register";
+import Login from "./login";
+import Profile from "./profile";
 const Home = () => {
   return (
     <Router>
@@ -8,8 +10,16 @@ const Home = () => {
         <p>Please register or log in to access your profile.</p>
       </div>
       <nav>
-        <Link to="/register" >Register</Link>
+        <Link to="/register"style={{ margin: "10px", textDecoration: "none", fontSize: "18px" }}>Register</Link>
+        <Link to="/login" style={{ margin: "10px", textDecoration: "none", fontSize: "18px" }}>Login</Link>
+        <Link to="/profile"style={{ margin: "10px", textDecoration: "none", fontSize: "18px" }}>Profile</Link>
       </nav>
+      <Routes>
+        
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
     </Router>
   );
 };
